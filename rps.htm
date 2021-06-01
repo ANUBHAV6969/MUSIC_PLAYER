@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT BEGINNING</title>
+    <style>
+        
+        html,
+        body {
+            height: 100%;
+        }
+        
+        body {
+            background-image: url("https://cdn.pixabay.com/photo/2013/09/14/18/41/colorful-182220_1280.jpg");
+            background-repeat: no-repeat;
+			background-position: fixed;
+            background-size: 100%;
+        }
+		
+		h1.headr{
+			        font-family: arial;
+                    font-size: 50px;
+                    text-align: center;
+		}
+		
+		.header{
+			padding: 30px;
+			color: white;
+			background: black;
+			opacity: 0.7;
+			box-shadow: 2px 2px 5px black;
+		}
+		
+		p.style{
+			font-family: arial;
+			font-size: 20px;
+			text-align: center;
+		}
+		
+		.button{
+			background-color: ;
+			border: none;
+			color: white;
+			padding: 15px 30px;
+			text-align: center;
+			text-decoration: none;
+			font-size: 15px;
+			box-shadow: 3px 3px 2px black;
+			radius: 2px;
+			margin: auto;
+		}
+		
+		.type1{
+			background-color: green;
+			position: fixed;
+			left: 38%;
+			top: 70%;
+		}
+		
+		.type1:hover {
+			background-color: white;
+			color: black;
+			border: 3px solid green;
+		}	
+		
+		.type2{
+			background-color: blue;
+			position: fixed;
+			left: 46%;
+			top: 70%;
+		}
+		
+		.type2:hover {
+			background-color: white;
+			color: black;
+			border: 3px solid blue;
+		}
+		
+		.type3{
+			background-color: red;
+			position: fixed;
+			left: 54%;
+			top: 70%;
+		}
+		
+		.type3:hover {
+			background-color: white;
+			color: black;
+			border: 3px solid red;
+		}
+		
+		.type4{
+			background-color: grey;
+			position: fixed;
+			left: 46%;
+			top: 80%;
+		}
+		
+		.type4:hover {
+			background-color: white;
+			color: black;
+			border: 3px solid grey;
+		}
+		
+		input[type = number], select{
+			padding: 10px 15px;
+			display: inline-block;
+			border: solid;
+			box-sizing: box-border;
+			box-radius: 2px;
+			position: absolute;
+			left: 45%;
+		}
+		
+    </style>
+</head>
+    <body>
+	
+		<div class = "header">
+			<h1 class = "headr">ROCK,PAPER & SCISSORS</h1>
+		</div>
+		
+        <p class = "style">YOU WOULD BE PLAYING AGAINST THE COMPUTER</p>
+        <p class = "style">WHOEVER WINS ,HIS SCORE WOULD BE DISPLAYED IN THE BOX PROVIDED</p>
+        <p class = "style">PLAY THIS CLASSIC AND TELL ME WHETHER YOU LIKE IT OR NOT</p>
+
+        <br>
+        <form>
+            <label for="fname"></label>
+            <input type="number" id="show_result1" name="result1" placeholder = "AI Score" readonly>
+            <br>
+            <br>
+            <br>
+            <label for="fname"></label>
+            <input type="number" id="show_result2" name="result2" placeholder = "User Score" readonly>
+        </form>
+
+                <button type="button" onclick="rockWins()" class = "button type1">ROCK</button>
+                <button type="button" onclick="paperWins()" class = "button type2">PAPER</button>
+                <button type="button" onclick="scissorsWins()" class = "button type3">SCISSORS</button>
+            <button type="button" onclick="clear_prog()" class = "button type4">LEAVE GAME</button>
+        <script>
+            var player = 0;
+            var computer = 0;
+
+            function rockWins() {
+                var myArray = [
+                    "ROCK",
+                    "PAPER",
+                    "SCISSORS",
+                ];
+
+                var randomItem = myArray[Math.floor(Math.random() * myArray.length)];
+                var var1 = "ROCK";
+
+                if (randomItem == var1) {
+                    alert("DRAW Computer Guessed for ROCK");
+                } else if (randomItem == "PAPER") {
+                    computer = computer + 1;
+                    document.getElementById("show_result1").value = computer;
+					alert("Computer Won 1 Point Computer Guessed for ROCK");
+                } else if (randomItem == "SCISSORS") {
+                    player = player + 1;
+                    document.getElementById("show_result2").value = player;
+					alert("You Won 1 Point Computer Guessed for ROCK");
+                }
+            }
+
+            function paperWins() {
+                var myArray = [
+                    "ROCK",
+                    "PAPER",
+                    "SCISSORS",
+
+                ];
+
+                var randomItem = myArray[Math.floor(Math.random() * myArray.length)];
+                var var2 = "PAPER";
+
+                if (randomItem == var2) {
+                    alert("DRAW Computer Guessed for PAPER");
+                } else if (randomItem == "ROCK") {
+                    player = player + 1;
+                    document.getElementById("show_result2").value = player;
+					alert("You Won 1 Point Computer Guessed for PAPER");
+                } else if (randomItem == "SCISSORS") {
+                    computer = computer + 1;
+                    document.getElementById("show_result1").value = computer;
+					alert("Computer Won 1 Point Computer Guessed for PAPER");
+                }
+            }
+
+            function scissorsWins() {
+                var myArray = [
+                    "ROCK",
+                    "PAPER",
+                    "SCISSORS",
+
+                ];
+
+                var randomItem = myArray[Math.floor(Math.random() * myArray.length)];
+                var var3 = "SCISSORS";
+
+                if (randomItem == var3) {
+                    alert("DRAW Computer Guessed for SCISSORS");
+                } else if (randomItem == "PAPER") {
+                    player = player + 1;
+                    document.getElementById("show_result2").value = player;
+					alert("You Won 1 Point Computer Guessed for SCISSORS");
+                } else if (randomItem == "ROCK") {
+                    computer = computer + 1;
+                    document.getElementById("show_result1").value = computer;
+					alert("Computer Won 1 Point Computer Guessed for SCISSORS");
+                }
+            }
+
+            function clear_prog() {
+
+                if (confirm('DO YOU WANT TO LEAVE THE GAME')) {
+                    window.location.reload();
+                }
+            }
+        </script>
+    </body>
+</html>
